@@ -11,4 +11,7 @@ class Employee
         @bonus = multiplier * salary
     end
     
+    def cum_salary
+        return salary
+    end 
 end

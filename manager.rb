@@ -6,15 +6,17 @@ class Manager < Employee
     @arr_emp = arr_emp
    end 
 
+   def cum_salary
+      cum_sum = salary
+      @arr_emp.each do |emp|
+         cum_sum += emp.cum_salary
+      end
+      return cum_sum 
+   end 
+
    def bonus(multiplier)
-    # bonus = 0
-    # @arr_emp.each do |employee|
-    #     bonus += employee.salary
-    # end
-    # return bonus * multiplier
-
-
-    # (@arr_emp.inject(0) {|acc, emp| acc + emp.salary}) * multiplier
+      return (cum_salary - salary) * multiplier
+      # (@arr_emp.inject(salary) {|acc, emp| acc + emp.salary}) * multiplier
    end
 
 
